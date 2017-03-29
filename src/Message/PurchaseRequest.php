@@ -42,14 +42,14 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('signature', $value);
     }
 
-    public function getInvId()
+    public function getOrderId()
     {
-        return $this->getParameter('inv_id');
+        return $this->getParameter('order_id');
     }
 
-    public function setInvId($value)
+    public function setOrderId($value)
     {
-        return $this->setParameter('inv_id', $value);
+        return $this->setParameter('order_id', $value);
     }
 
     public function getClient()
@@ -72,16 +72,6 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('time', $value);
     }
 
-    public function getShpCart()
-    {
-        return $this->getParameter('shp_cart');
-    }
-
-    public function setShpCart($value)
-    {
-        return $this->setParameter('shp_cart', $value);
-    }
-
     public function getData()
     {
         $this->validate(
@@ -91,16 +81,15 @@ class PurchaseRequest extends AbstractRequest
         );
 
         return [
-            'Desc' => $this->getDescription(),
-            'MrchLogin' => $this->getPurse(),
-            'OutSum' => $this->getAmount(),
-            'IncCurrLabel' => $this->getCurrency(),
-            'InvId' => $this->getInvId(),
-            'Culture' => $this->getLanguage(),
-            'ShpCart' => $this->getShpCart(),
-            'ShpClient' => $this->getClient(),
-            'ShpTime' => $this->getTime(),
-            'SignatureValue' => $this->getSignature(),
+            'o' => $this->getOrderId(),
+            'm' => $this->getPurse(),
+            'oa' => $this->getAmount(),
+            'i' => $this->getCurrency(),
+            'lang' => $this->getLanguage(),
+            'us_system' => 'freekassa',
+            'us_client' => $this->getClient(),
+            'us_time' => $this->getTime(),
+            's' => $this->getSignature(),
         ];
     }
 
