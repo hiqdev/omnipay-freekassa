@@ -1,9 +1,10 @@
-#hiqdev/omnipay-freekassa changelog
-----------------------------------
+# #hiqdev/omnipay-freekassa
 
 ## [Under development]
 
-- Added basics ([])
+- Added basics ([@hiqsol])
+
+## [Development started] - 2017-03-29
 
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
@@ -13,3 +14,4 @@
 [andreyklochok@gmail.com]: https://github.com/tafid
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
+[Under development]: https://github.com/hiqdev/omnipay-freekassa/releases
