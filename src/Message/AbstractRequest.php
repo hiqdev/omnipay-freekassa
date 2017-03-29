@@ -19,7 +19,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * Get the purse.
-     *
      * @return string purse
      */
     public function getPurse()
@@ -29,9 +28,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * Set the purse.
-     *
      * @param string $purse purse
-     *
      * @return self
      */
     public function setPurse($value)
@@ -41,7 +38,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * Get the secret key.
-     *
      * @return string secret key
      */
     public function getPassword()
@@ -51,9 +47,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * Set the secret key.
-     *
      * @param string $key secret key
-     *
      * @return self
      */
     public function setPassword($value)

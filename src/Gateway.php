@@ -25,11 +25,6 @@ class Gateway extends AbstractGateway
         return 'FreeKassa';
     }
 
-    public function getAssetDir()
-    {
-        return dirname(__DIR__) . '/assets';
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -44,7 +39,6 @@ class Gateway extends AbstractGateway
 
     /**
      * Get the unified purse.
-     *
      * @return string merchant purse
      */
     public function getPurse()
@@ -54,9 +48,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Set the unified purse.
-     *
      * @param string $purse merchant purse
-     *
      * @return self
      */
     public function setPurse($value)
@@ -66,7 +58,6 @@ class Gateway extends AbstractGateway
 
     /**
      * Get the unified secret key.
-     *
      * @return string secret key
      */
     public function getSecretKey()
@@ -76,9 +67,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Set the unified secret key.
-     *
      * @param string $value secret key
-     *
      * @return self
      */
     public function setSecretKey($value)
@@ -88,7 +77,6 @@ class Gateway extends AbstractGateway
 
     /**
      * @param array $parameters
-     *
      * @return \Omnipay\ePayService\Message\PurchaseRequest
      */
     public function purchase(array $parameters = [])
@@ -98,7 +86,6 @@ class Gateway extends AbstractGateway
 
     /**
      * @param array $parameters
-     *
      * @return \Omnipay\ePayService\Message\CompletePurchaseRequest
      */
     public function completePurchase(array $parameters = [])

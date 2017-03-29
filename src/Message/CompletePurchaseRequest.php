@@ -17,7 +17,6 @@ class CompletePurchaseRequest extends AbstractRequest
 {
     /**
      * Get the data for this request.
-     *
      * @return array request data
      */
     public function getData()
@@ -29,9 +28,7 @@ class CompletePurchaseRequest extends AbstractRequest
 
     /**
      * Send the request with specified data.
-     *
      * @param mixed $data The data to send
-     *
      * @return CompletePurchaseResponse
      */
     public function sendData($data)
