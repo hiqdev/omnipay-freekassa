@@ -81,15 +81,15 @@ class PurchaseRequest extends AbstractRequest
         );
 
         return [
-            'o' => $this->getOrderId(),
             'm' => $this->getPurse(),
             'oa' => $this->getAmount(),
-            'i' => $this->getCurrency(),
-            'lang' => $this->getLanguage(),
-            'us_system' => 'freekassa',
-            'us_client' => $this->getClient(),
-            'us_time' => $this->getTime(),
+            'o' => $this->getOrderId(),
+            'i' => strtolower($this->getCurrency()),
             's' => $this->getSignature(),
+            'lang' => $this->getLanguage(),
+            'us_time' => $this->getTime(),
+            'us_client' => $this->getClient(),
+            'us_system' => 'freekassa',
         ];
     }
 
