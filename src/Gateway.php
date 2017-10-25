@@ -33,6 +33,7 @@ class Gateway extends AbstractGateway
         return [
             'purse' => '',
             'secretKey'     => '',
+            'secretKey2'     => '',
             'testMode'      => false,
         ];
     }
@@ -73,6 +74,25 @@ class Gateway extends AbstractGateway
     public function setSecretKey($value)
     {
         return $this->setParameter('secretKey', $value);
+    }
+
+    /**
+     * Get the secret key for notifiction request verification
+     * @return string secret key
+     */
+    public function getSecretKey2()
+    {
+        return $this->getParameter('secretKey2');
+    }
+
+    /**
+     * Get the secret key for notifiction request verification
+     * @param string $value secret key
+     * @return self
+     */
+    public function setSecretKey2($value)
+    {
+        return $this->setParameter('secretKey2', $value);
     }
 
     /**

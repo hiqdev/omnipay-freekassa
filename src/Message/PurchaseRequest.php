@@ -12,16 +12,6 @@ namespace Omnipay\FreeKassa\Message;
 
 class PurchaseRequest extends AbstractRequest
 {
-    public function getCurrency()
-    {
-        return $this->getParameter('currency');
-    }
-
-    public function setCurrency($value)
-    {
-        return $this->setParameter('currency', $value);
-    }
-
     public function getLanguage()
     {
         return $this->getParameter('language');
@@ -30,26 +20,6 @@ class PurchaseRequest extends AbstractRequest
     public function setLanguage($value)
     {
         return $this->setParameter('language', $value);
-    }
-
-    public function getSignature()
-    {
-        return $this->getParameter('signature');
-    }
-
-    public function setSignature($value)
-    {
-        return $this->setParameter('signature', $value);
-    }
-
-    public function getOrderId()
-    {
-        return $this->getParameter('order_id');
-    }
-
-    public function setOrderId($value)
-    {
-        return $this->setParameter('order_id', $value);
     }
 
     public function getClient()
@@ -62,35 +32,33 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('client', $value);
     }
 
-    public function getTime()
-    {
-        return $this->getParameter('time');
-    }
-
-    public function setTime($value)
-    {
-        return $this->setParameter('time', $value);
-    }
-
     public function getData()
     {
         $this->validate(
-            'purse',
-            'amount', 'currency', 'description',
-            'returnUrl', 'cancelUrl', 'notifyUrl'
+            'purse', 'secretKey',
+            'amount', 'currency', 'transactionId'
         );
 
-        return [
+        return array_filter([
             'm' => $this->getPurse(),
             'oa' => $this->getAmount(),
-            'o' => $this->getOrderId(),
+            'o' => $this->getTransactionId(),
             'i' => strtolower($this->getCurrency()),
-            's' => $this->getSignature(),
+            's' => $this->calculateSignature(),
             'lang' => $this->getLanguage(),
-            'us_time' => $this->getTime(),
             'us_client' => $this->getClient(),
             'us_system' => 'freekassa',
-        ];
+        ]);
+    }
+
+    public function calculateSignature()
+    {
+        return md5(implode(':', [
+            $this->getPurse(),
+            $this->getAmount(),
+            $this->getSecretKey(),
+            $this->getTransactionId()
+        ]));
     }
 
     public function sendData($data)
