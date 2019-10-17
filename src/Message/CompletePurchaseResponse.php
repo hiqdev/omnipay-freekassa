@@ -143,8 +143,6 @@ class CompletePurchaseResponse extends AbstractResponse
             159 => 'CARD P2P',
         ];
 
-        return isset($map[$this->data['CUR_ID']])
-            ? $map[$this->data['CUR_ID']]
-            : '';
+        return $map[$this->data['CUR_ID']] ?? '';
     }
 }
