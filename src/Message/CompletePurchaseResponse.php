@@ -84,6 +84,11 @@ class CompletePurchaseResponse extends AbstractResponse
         return $this->data['us_time'];
     }
 
+    public function getCurrency()
+    {
+        return $this->data['us_currency'] ?? 'RUB';
+    }
+
     /**
      * @see http://www.free-kassa.ru/docs/api.php#ex_currencies
      * @return string
@@ -143,6 +148,8 @@ class CompletePurchaseResponse extends AbstractResponse
             159 => 'CARD P2P',
         ];
 
-        return $map[$this->data['CUR_ID']] ?? '';
+        return isset($map[$this->data['CUR_ID']])
+            ? $map[$this->data['CUR_ID']]
+            : '';
     }
 }

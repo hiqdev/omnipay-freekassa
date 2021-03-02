@@ -22,14 +22,24 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('language', $value);
     }
 
-    public function getClient()
+    public function getClient() : string
     {
-        return $this->getParameter('client');
+        return (string) $this->getParameter('client');
     }
 
     public function setClient($value)
     {
         return $this->setParameter('client', $value);
+    }
+
+    public function getCurrency()
+    {
+        return $this->getParameter('currency') ?? 'RUB';
+    }
+
+    public function setCurrency($value)
+    {
+        $this->setParameter('currency', $value);
     }
 
     public function getData()
@@ -48,6 +58,7 @@ class PurchaseRequest extends AbstractRequest
             'lang' => $this->getLanguage(),
             'us_client' => $this->getClient(),
             'us_system' => 'freekassa',
+            'us_currency' => $this->getCurrency(),
         ]);
     }
 
