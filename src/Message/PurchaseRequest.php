@@ -22,7 +22,7 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('language', $value);
     }
 
-    public function getClient() : string
+    public function getClient(): string
     {
         return (string) $this->getParameter('client');
     }
