@@ -48,6 +48,7 @@ class PurchaseRequest extends AbstractRequest
             'lang' => $this->getLanguage(),
             'us_client' => $this->getClient(),
             'us_system' => 'freekassa',
+            'us_currency' => strtoupper($this->getCurrency()),
         ]);
     }
 
