@@ -84,6 +84,11 @@ class CompletePurchaseResponse extends AbstractResponse
         return $this->data['us_time'];
     }
 
+    public function getCurrency()
+    {
+        return $this->data['us_currency'] ?? 'RUB';
+    }
+
     /**
      * @see http://www.free-kassa.ru/docs/api.php#ex_currencies
      * @return string
