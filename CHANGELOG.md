@@ -1,6 +1,6 @@
 # #hiqdev/omnipay-freekassa
 
-## [Under development]
+## [2.0.0] - 2021-09-29
 
 - Added basics ([@hiqsol])
 
@@ -15,3 +15,4 @@
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
 [Under development]: https://github.com/hiqdev/omnipay-freekassa/releases
+[2.0.0]: https://github.com/hiqdev/omnipay-freekassa/releases/tag/2.0.0
