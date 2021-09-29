@@ -1,5 +1,14 @@
 # #hiqdev/omnipay-freekassa
 
+## [3.0.1] - 2021-04-05
+
+- Add Currency property support (#3)
+    - [2ee93dd] 2021-04-05 Merge pull request #3 from bladeroot/add-currency [@SilverFire]
+    - [de47c3f] 2021-04-02 fix: client could be object and throws exceptions [@BladeRoot]
+    - [1f3a548] 2021-04-02 use default currency if currency does not set [@BladeRoot]
+    - [8d3c2d3] 2021-04-01 add us_currency [@BladeRoot]
+    - [4bd72d0] 2021-03-29 add get currency [@BladeRoot]
+
 ## [3.0.0] - 2019-10-17
 
 - Update to Omnipay v3
@@ -31,3 +40,9 @@
 [ec301ff]: https://github.com/hiqdev/omnipay-freekassa/commit/ec301ff
 [365c098]: https://github.com/hiqdev/omnipay-freekassa/commit/365c098
 [3.0.0]: https://github.com/hiqdev/omnipay-freekassa/releases/tag/3.0.0
+[2ee93dd]: https://github.com/hiqdev/omnipay-freekassa/commit/2ee93dd
+[de47c3f]: https://github.com/hiqdev/omnipay-freekassa/commit/de47c3f
+[1f3a548]: https://github.com/hiqdev/omnipay-freekassa/commit/1f3a548
+[8d3c2d3]: https://github.com/hiqdev/omnipay-freekassa/commit/8d3c2d3
+[4bd72d0]: https://github.com/hiqdev/omnipay-freekassa/commit/4bd72d0
+[3.0.1]: https://github.com/hiqdev/omnipay-freekassa/compare/3.0.0...3.0.1
