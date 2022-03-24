@@ -18,7 +18,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
  */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
-    protected $_redirect = 'https://www.free-kassa.ru/merchant/cash.php';
+    protected $_redirect = 'https://pay.freekassa.ru/';
 
     public function isSuccessful()
     {
